@@ -1,0 +1,19 @@
+.login{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.login__container{
+    display: flex;
+    align-items: center;
+    border: gray;
+    width: 300px;
+    
+}
+.login__signInButton{
+    display: flex;
+
+}
