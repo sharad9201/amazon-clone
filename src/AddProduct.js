@@ -2,7 +2,7 @@ function AddProduct(){
 
     return (
         <div className="">
-            <h1>add product</h1>
+            <h1>add product page</h1>
          </div>
    )
 }
