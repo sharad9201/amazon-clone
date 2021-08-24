@@ -1,30 +1,14 @@
 import './App.css';
-import Headers from './Headers';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom' 
-import Login from './Login';
-import Home from './Home'
+// import {BrowserRouter as Router, Route, Switch} from 'react-router-dom' 
+import {Button} from 'react-bootstrap'
 
 function App() {
   return (
-    <Router>
-    <div className="App">
-      <Switch>
-        <Route path="/checkout">
-         <Headers/>
-         </Route>
-         <Route path="/login">
-          <Login/>
-        </Route>
-        <Route path="/">
-          <Headers/>
-          <Home/>
-        </Route>
-      
-      </Switch>
-      
-      
-    </div>
-    </Router>
+   <div className="App">
+     <h1>E-Comm Project</h1>
+      <button>hello</button>
+      <Button>hello</Button>
+   </div>
   );
 }
 
