@@ -15,18 +15,18 @@ function App() {
       <div className="App">
         <Header />
           <h1>E-Comm Project</h1>
-           <Route path="/login">
-             <Login />
-            </Route>
-            <Route path="/register">
-             <Register />
-            </Route>
-            <Route path="/add">
-             <AddProduct />
-            </Route>
-            <Route path="/update">
-             <UpdateProduct />
-            </Route>
+             <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/register">
+                <Register />
+              </Route>
+              <Route path="/add">
+                <AddProduct />
+              </Route>
+              <Route path="/update">
+                <UpdateProduct />
+              </Route>
       </div>
     </Router>
   );
