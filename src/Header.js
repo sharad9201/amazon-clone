@@ -1,7 +1,10 @@
-import {Navbar,Nav } from 'react-bootstrap'
+import {Navbar,Nav,NavDropdown } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 function Header(){
+    //finds the user-name 
+    const user = JSON.parse(localStorage.getItem('user-info'))
+    console.log(user)
 return(
     <div className="mr-auto nav_bar_wrapper">
     <Navbar bg="dark" variant="dark">
@@ -23,6 +26,13 @@ return(
                }
                
                
+            </Nav>
+            <Nav>
+            <NavDropdown title={user.name}>
+                <NavDropdown.Item>LOgout</NavDropdown.Item>
+                <NavDropdown.Item>Profile</NavDropdown.Item>
+
+                </NavDropdown>
             </Nav>
            
             </Navbar>
