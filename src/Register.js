@@ -1,11 +1,13 @@
 import { result } from 'lodash'
 import React, {useState} from 'react'
+import {useHistory } from 'react-router-dom'
 
 function Register(){
 
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [email, setEmail] = useState("")
+    const history = useHistory()
 
     async function signUp(){
         let item = {name, password, email}
@@ -22,15 +24,17 @@ function Register(){
 
         result = await result.json()
         console.warn("result", result)
+        localStorage.setItem("user-info",JSON.stringify(result))
+        history.push("/add")
     }
     return ( 
          <div className="">
              <h1>User Sign up</h1>
-             <input type="text" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" />
+             <input type="text" placeholder="name" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" />
              <br />
-             <input type="text" value={email} onChange={(e)=>setEmail(e.target.value)} className="form-control" />
+             <input type="text" value={email} placeholder="email" onChange={(e)=>setEmail(e.target.value)} className="form-control" />
              <br />
-             <input type="text" value={password} onChange={(e)=>setPassword(e.target.value)} className="form-control" />
+             <input type="text" value={password} placeholder="password" onChange={(e)=>setPassword(e.target.value)} className="form-control" />
              <br />
              <button onClick={signUp} className="btn btn-primary"> Sign up </button>
           </div>
