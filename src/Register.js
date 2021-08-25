@@ -1,6 +1,8 @@
 import { result } from 'lodash'
 import React, {useState} from 'react'
 import {useHistory } from 'react-router-dom'
+import Header from "./Header";
+
 
 function Register(){
 
@@ -28,7 +30,9 @@ function Register(){
         history.push("/add")
     }
     return ( 
-         <div className="">
+     <>
+     <Header/>
+     <div className="">
              <h1>User Sign up</h1>
              <input type="text" placeholder="name" value={name} onChange={(e)=>setName(e.target.value)} className="form-control" />
              <br />
@@ -38,6 +42,7 @@ function Register(){
              <br />
              <button onClick={signUp} className="btn btn-primary"> Sign up </button>
           </div>
+     </>
     )
 }
 export default Register

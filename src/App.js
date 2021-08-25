@@ -13,8 +13,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-          <h1>E-Comm Project</h1>
+          {/* <h1>E-Comm Project</h1> */}
              <Route path="/login">
                 <Login />
               </Route>
