@@ -1,10 +1,17 @@
-import { result } from 'lodash'
-import React, {useState} from 'react'
+// import { result } from 'lodash'
+import React, {useState, useEffect} from 'react'
 import {useHistory } from 'react-router-dom'
 import Header from "./Header";
 
 
 function Register(){
+
+    ///takes to the add product if we are logged in
+    useEffect(()=>{
+        if(localStorage.getItem('user-info')){
+            history.push('./add')
+        }
+    },[])
 
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")

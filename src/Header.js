@@ -7,9 +7,10 @@ return(
     <Navbar bg="dark" variant="dark">
        
         <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+        {/* protected routes after user info the login and resister is disables */}
            <Nav className="me-auto">
                {
-                   localStorage.getItem('user-info')?
+                   localStorage.getItem('user-info') ?
                    <>
                     <Link to="/add">Add Product</Link>
                     <Link to="/update">Update Product</Link>
