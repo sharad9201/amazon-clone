@@ -8,6 +8,7 @@ import Register from "./Register";
 import Header from "./Header";
 import AddProduct from "./AddProduct";
 import UpdateProduct from "./UpdateProduct";
+import Protected from "./Protected";
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
                 <Register />
               </Route>
               <Route path="/add">
-                <AddProduct />
+                <Protected Cmp={AddProduct} />
               </Route>
               <Route path="/update">
-                <UpdateProduct />
+              <Protected Cmp={UpdateProduct} />
               </Route>
       </div>
     </Router>
