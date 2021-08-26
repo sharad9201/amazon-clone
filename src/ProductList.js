@@ -1,4 +1,5 @@
 import Header from "./Header";
+import {Link} from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import {Table} from "react-bootstrap";
 
@@ -19,6 +20,7 @@ function ProductList() {
   console.warn(result)
   getData()
 }
+
 // relaod the data when called
 async function getData(){
   let result = await fetch("http://127.0.0.1:8000/api/list");
@@ -53,6 +55,8 @@ async function getData(){
              <td>{item.price}</td>
              <td>{item.description}</td>
              <td><span className="delete" onClick={()=>{deleteOperation(item.id)}}> Delete</span></td>
+             <td><Link to={"update/"+item.id} ><span className="update" >Update</span></Link></td>
+
 
            </tr>)
          }

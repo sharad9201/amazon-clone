@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Login from "./Login";
 import Register from "./Register";
-import Header from "./Header";
+// import Header from "./Header";
 import AddProduct from "./AddProduct";
 import UpdateProduct from "./UpdateProduct";
 import ProductList from "./ProductList";
@@ -28,7 +28,7 @@ function App() {
                 <Route path="/add">
                   <Protected Cmp={AddProduct} />
                 </Route>
-                <Route path="/update">
+                <Route path="/update/:id">
                   <Protected Cmp={UpdateProduct} />
                 </Route>
                 {/* blank path should be last so it doesnot overlaps othenr routes */}

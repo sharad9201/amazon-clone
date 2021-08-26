@@ -9,3 +9,10 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.update{
+    background-color: black;
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
