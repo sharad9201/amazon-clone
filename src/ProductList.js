@@ -4,12 +4,27 @@ import {Table} from "react-bootstrap";
 
 function ProductList() {
   const [data, setData] = useState([]);
-  useEffect(async () => {
-    let result = await fetch("http://127.0.0.1:8000/api/list");
-    result = await result.json();
-    setData(result);
+  useEffect( () => {
+    getData()
   }, []);
-  console.warn(data);
+  // console.warn(data);
+
+ async function deleteOperation(id){
+
+  let result = await fetch("http://127.0.0.1:8000/api/delete/"+id,{
+    method:"DELETE"
+  })
+
+  result = await result.json()
+  console.warn(result)
+  getData()
+}
+// relaod the data when called
+async function getData(){
+  let result = await fetch("http://127.0.0.1:8000/api/list");
+  result = await result.json();
+  setData(result);
+}
 
   return (
     <div>
@@ -22,6 +37,8 @@ function ProductList() {
             <th>Image</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Operations</th>
+
 
           </tr>
         </thead>
@@ -35,6 +52,8 @@ function ProductList() {
              <td><img style={{width:140}} src={"http://localhost:8000/"+item.file_path} /></td>
              <td>{item.price}</td>
              <td>{item.description}</td>
+             <td><span className="delete" onClick={()=>{deleteOperation(item.id)}}> Delete</span></td>
+
            </tr>)
          }
         </tbody>
