@@ -31,6 +31,7 @@ function ProductList() {
              <tr>
              <td>{item.id}</td>
              <td>{item.name}</td>
+             {/* backend serve must be added to get the right image other image will be crash */}
              <td><img style={{width:140}} src={"http://localhost:8000/"+item.file_path} /></td>
              <td>{item.price}</td>
              <td>{item.description}</td>
