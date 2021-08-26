@@ -38,7 +38,7 @@ function Login(){
                     <br />
                     <input type="text" value={password} placeholder="password" onChange={(e)=>setPassword(e.target.value)} className="form-control" />
                     <br />
-                    <button onClick={logIn} className="btn btn-primary"> Sign up </button>
+                    <button onClick={logIn} className="btn btn-primary"> log up </button>
                 </div>
         </div>
     )
