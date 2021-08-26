@@ -5,7 +5,7 @@ function UpdateProduct(){
     return (
         <div className="">
             <Header />
-            <h1>update page</h1>
+            <h1>here goes the update</h1>
          </div>
    )
 }
