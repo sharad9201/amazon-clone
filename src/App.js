@@ -5,29 +5,42 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Login from "./Login";
 import Register from "./Register";
-import Header from "./Header";
+// import Header from "./Header";
 import AddProduct from "./AddProduct";
 import UpdateProduct from "./UpdateProduct";
+import ProductList from "./ProductList";
+
+import Protected from "./Protected";
+import SearchProduct from "./SearchProduct";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-          <h1>E-Comm Project</h1>
-           <Route path="/login">
-             <Login />
-            </Route>
-            <Route path="/register">
-             <Register />
-            </Route>
-            <Route path="/add">
-             <AddProduct />
-            </Route>
-            <Route path="/update">
-             <UpdateProduct />
-            </Route>
-      </div>
+      
+        <div className="App">
+        <Switch>
+            {/* <h1>E-Comm Project</h1> */}
+              <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/register">
+                  <Register />
+                </Route>
+                <Route path="/add">
+                  <Protected Cmp={AddProduct} />
+                </Route>
+                <Route path="/search">
+                  <Protected Cmp={SearchProduct} />
+                </Route>
+                <Route path="/update/:id">
+                  <Protected Cmp={UpdateProduct} />
+                </Route>
+                {/* blank path should be last so it doesnot overlaps othenr routes */}
+                <Route path="/">
+                  <Protected Cmp={ProductList} />
+                </Route>
+              </Switch>
+        </div>
     </Router>
   );
 }
